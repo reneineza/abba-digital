@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+}
+
+:root {
+  --background: #09090b;
+  --foreground: #ffffff;
+  --muted: #a1a1aa;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+@theme {
+  --font-inter: var(--font-inter, "Inter", "Helvetica Neue", sans-serif);
+  --font-space-grotesk: var(--font-space-grotesk, "Space Grotesk", sans-serif);
+  
+  --color-background: #09090b; /* Very dark slate, almost black */
+  --color-foreground: #ffffff; /* Pure white text */
+  --color-muted: #a1a1aa; /* Muted gray for secondary text */
+  --color-accent: #3b82f6; /* Cyber blue */
+  --color-accent-hover: #60a5fa; /* Cyber blue light */
+  --color-border: rgba(255, 255, 255, 0.1); /* Subtle white border for glass */
+  
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px -5px var(--color-accent); }
+  to { box-shadow: 0 0 20px 5px var(--color-accent); }
+}
