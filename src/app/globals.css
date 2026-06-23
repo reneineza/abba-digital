@@ -1,0 +1,232 @@
+@import url("https://fonts.cdnfonts.com/css/beatrice-display-trial");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Beatrice Trial", sans-serif;
+  --font-heading: "Beatrice Display Trial", "Beatrice Headline Trial", sans-serif;
+  --font-mono: monospace;
+}
+
+:root {
+  --background: #0d0d0d;
+  --foreground: #ffffff;
+  --card-background: #151515;
+  --theme-orange: #ff6b1e;
+  --theme-orange-muted: rgba(255, 107, 30, 0.15);
+  --text-muted: #7a7a7a;
+  --border-muted: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-orange);
+  border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--theme-orange);
+  color: #ffffff;
+}
+
+/* Gencyo animations */
+@keyframes floatBobY {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-bob-y {
+  animation: floatBobY 4s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ani-circle {
+  animation: spinSlow 20s linear infinite;
+}
+
+.tm-gsap-animate-circle {
+  animation: spinSlow 30s linear infinite;
+}
+
+/* Ripple Play Button Animation */
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 1px solid var(--theme-orange);
+  animation: ripple 2s linear infinite;
+}
+
+/* Marquee Scrolling Animation */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 25s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 25s linear infinite;
+}
+
+/* Gencyo CTA Button Style */
+.btn-style-one {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--theme-orange);
+  color: #ffffff;
+  padding: 1rem 2.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-style-one .btn-title {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.btn-style-one .btn-arrow-left {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.btn-style-one .btn-arrow-right {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.btn-style-one:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-style-one:hover .btn-arrow-left {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.btn-style-one:hover .btn-arrow-right {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+/* Navigation Links sliding underline */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--theme-orange);
+  transition: width 0.3s ease;
+}
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+.nav-link-underline-active::after {
+  width: 100%;
+}
+
+/* Gencyo Form Input style */
+.minimal-input {
+  width: 100%;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-muted);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  border-radius: 0;
+}
+
+.minimal-input:focus {
+  outline: none;
+  border-bottom-color: var(--theme-orange);
+}
+
+.minimal-input::placeholder {
+  color: #555555;
+}
