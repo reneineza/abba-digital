@@ -7,14 +7,14 @@ export default function Footer() {
     <footer className="footer-section relative bg-[#0D0D0D] border-t border-white/8 overflow-hidden text-white">
       {/* Gencyo background shapes */}
       <div className="absolute left-0 bottom-0 w-80 h-80 pointer-events-none opacity-20 tm-gsap-animate-circle">
-        <img src="/images/icons/footer-shape-1-1.png" alt="Footer Shape" className="w-full h-full object-contain" />
+        <img src="/images/icons/footer-shape-1-1.png" alt="Footer Shape" className="w-full h-full object-contain blend-screen" />
       </div>
 
       <div className="relative pt-24 pb-12">
         {/* Footer Top Header */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-16">
           <div className="footer-line mb-8 opacity-25">
-            <img src="/images/icons/footer-line1-1.png" alt="line" className="w-full" />
+            <img src="/images/icons/footer-line1-1.png" alt="line" className="w-full blend-screen" />
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8">
             <Link href="/" className="group flex items-center gap-3">

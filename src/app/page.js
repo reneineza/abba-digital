@@ -125,10 +125,10 @@ export default function Home() {
       >
         {/* Floating 3D Spheres */}
         <div className="absolute top-24 left-12 w-28 h-28 pointer-events-none float-bob-y opacity-90">
-          <img src="/images/icons/hero-object-1-1.png" alt="3D Sphere" className="w-full h-full object-contain" />
+          <img src="/images/icons/hero-object-1-1.png" alt="3D Sphere" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute bottom-24 right-1/4 w-24 h-24 pointer-events-none float-bob-y opacity-80" style={{ animationDelay: "1s" }}>
-          <img src="/images/icons/hero-object-1-2.png" alt="3D Shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/hero-object-1-2.png" alt="3D Shape" className="w-full h-full object-contain blend-screen" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -146,13 +146,16 @@ export default function Home() {
             </h1>
 
             <div className="flex flex-col md:flex-row items-start md:items-center gap-10 pt-4">
-              {/* Rotating stamp circle wheel */}
+              {/* Rotating stamp circle wheel - SVG text path circle */}
               <div className="relative w-24 h-24 shrink-0 hidden sm:flex items-center justify-center">
-                <img 
-                  src="/images/banner/circle1-1.png" 
-                  alt="Rotating stamp text" 
-                  className="w-full h-full object-contain ani-circle"
-                />
+                <svg className="w-full h-full ani-circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <path id="circlePath" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                  </defs>
+                  <text fontSize="10.5" fill="#FF6B1E" fontWeight="700" letterSpacing="2" textTransform="uppercase" fontFamily="monospace">
+                    <textPath href="#circlePath">DIGITAL AGENCY ★ WEB DESIGN ★ </textPath>
+                  </text>
+                </svg>
                 <Link href="/services" className="absolute w-10 h-10 rounded-full bg-[#151515] flex items-center justify-center hover:bg-[#FF6B1E] transition-colors border border-white/10">
                   <img src="/images/icons/right-arrow-1-1.png" alt="arrow" className="w-3.5 h-3.5 object-contain" />
                 </Link>
@@ -222,16 +225,16 @@ export default function Home() {
       <section className="relative py-28 border-b border-white/8 overflow-hidden select-none">
         {/* Floating background graphics */}
         <div className="absolute left-6 top-12 w-64 h-64 pointer-events-none opacity-20">
-          <img src="/images/icons/about-light-1-1.png" alt="shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/about-light-1-1.png" alt="shape" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute left-24 top-24 w-32 h-32 pointer-events-none opacity-30 tm-gsap-animate-circle">
-          <img src="/images/icons/about-shape-1-1.png" alt="shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/about-shape-1-1.png" alt="shape" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute right-12 bottom-12 w-72 h-72 pointer-events-none opacity-20">
-          <img src="/images/icons/about-light-1-2.png" alt="shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/about-light-1-2.png" alt="shape" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute right-24 bottom-24 w-36 h-36 pointer-events-none opacity-30 tm-gsap-animate-circle">
-          <img src="/images/icons/about-shape-1-2.png" alt="shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/about-shape-1-2.png" alt="shape" className="w-full h-full object-contain blend-screen" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -489,7 +492,7 @@ export default function Home() {
                 </h2>
               </div>
               <div className="w-64 h-64 opacity-80 pt-6">
-                <img src="/images/icons/work-process-shape1-1.png" alt="Process shape" className="w-full h-full object-contain tm-gsap-animate-circle" />
+                <img src="/images/icons/work-process-shape1-1.png" alt="Process shape" className="w-full h-full object-contain tm-gsap-animate-circle blend-screen" />
               </div>
             </div>
 
@@ -663,13 +666,13 @@ export default function Home() {
       <section className="relative py-28 border-b border-white/8 select-none bg-[#0d0d0d] overflow-hidden">
         {/* Gencyo background shapes */}
         <div className="absolute inset-0 opacity-15 pointer-events-none">
-          <img src="/images/icons/testi-bg-shape.png" alt="bg shape" className="w-full h-full object-cover" />
+          <img src="/images/icons/testi-bg-shape.png" alt="bg shape" className="w-full h-full object-cover blend-screen" />
         </div>
         <div className="absolute left-6 top-1/4 w-72 h-72 pointer-events-none opacity-25">
-          <img src="/images/icons/testi-light-shape-1-1.png" alt="light" className="w-full h-full object-contain" />
+          <img src="/images/icons/testi-light-shape-1-1.png" alt="light" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute left-16 top-1/3 w-32 h-32 pointer-events-none opacity-30 tm-gsap-animate-circle">
-          <img src="/images/icons/testi-shape-1-1.png" alt="shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/testi-shape-1-1.png" alt="shape" className="w-full h-full object-contain blend-screen" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
@@ -699,13 +702,17 @@ export default function Home() {
             {/* Left side Quote circular stamp */}
             <div className="lg:col-span-4 flex justify-center">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center">
-                <img 
-                  src="/images/icons/text-circle1-1.png" 
-                  alt="Rotating review circle" 
-                  className="w-full h-full object-contain ani-circle"
-                />
+                {/* SVG spinning text circle */}
+                <svg className="w-full h-full ani-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <path id="testimonialCircle" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+                  </defs>
+                  <text fontSize="13" fill="#FF6B1E" fontWeight="700" letterSpacing="3" fontFamily="monospace">
+                    <textPath href="#testimonialCircle">CUSTOMER REVIEW ★ HAPPY CLIENTS ★ </textPath>
+                  </text>
+                </svg>
                 <div className="absolute w-12 h-12 flex items-center justify-center">
-                  <img src="/images/icons/quote-icon-1-1.png" alt="quotes logo" className="w-8 h-8 object-contain" />
+                  <img src="/images/icons/quote-icon-1-1.png" alt="quotes logo" className="w-8 h-8 object-contain blend-screen" />
                 </div>
               </div>
             </div>
@@ -790,10 +797,10 @@ export default function Home() {
       <section className="relative py-28 border-b border-white/8 select-none bg-[#0D0D0D] overflow-hidden">
         {/* Background shapes */}
         <div className="absolute left-6 top-1/4 w-80 h-80 pointer-events-none opacity-20">
-          <img src="/images/icons/faq-light-1-1.png" alt="faq bg" className="w-full h-full object-contain" />
+          <img src="/images/icons/faq-light-1-1.png" alt="faq bg" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute left-16 top-1/3 w-36 h-36 pointer-events-none opacity-35 tm-gsap-animate-circle">
-          <img src="/images/icons/faq-shape-1-1.png" alt="shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/faq-shape-1-1.png" alt="shape" className="w-full h-full object-contain blend-screen" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
@@ -846,10 +853,10 @@ export default function Home() {
       >
         {/* Floating background shapes */}
         <div className="absolute right-6 top-1/4 w-80 h-80 pointer-events-none opacity-20">
-          <img src="/images/icons/team-light-1-1.png" alt="bg shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/team-light-1-1.png" alt="bg shape" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute right-16 top-1/3 w-36 h-36 pointer-events-none opacity-30 tm-gsap-animate-circle">
-          <img src="/images/icons/team-shape-1-1.png" alt="shape" className="w-full h-full object-contain" />
+          <img src="/images/icons/team-shape-1-1.png" alt="shape" className="w-full h-full object-contain blend-screen" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -923,13 +930,13 @@ export default function Home() {
       <section className="relative py-28 border-b border-white/8 select-none bg-[#0D0D0D] overflow-hidden">
         {/* background shapes */}
         <div className="absolute left-6 top-1/4 w-80 h-80 pointer-events-none opacity-20">
-          <img src="/images/icons/award-shape-1-2.png" alt="award bg" className="w-full h-full object-contain animate-bounce" />
+          <img src="/images/icons/award-shape-1-2.png" alt="award bg" className="w-full h-full object-contain blend-screen animate-bounce" />
         </div>
         <div className="absolute left-24 top-1/3 w-96 h-96 pointer-events-none opacity-10">
-          <img src="/images/icons/award-light-1-1.png" alt="light" className="w-full h-full object-contain" />
+          <img src="/images/icons/award-light-1-1.png" alt="light" className="w-full h-full object-contain blend-screen" />
         </div>
         <div className="absolute right-6 bottom-12 w-80 h-80 pointer-events-none opacity-20">
-          <img src="/images/icons/award-shape-1-3.png" alt="shape" className="w-full h-full object-contain animate-pulse" />
+          <img src="/images/icons/award-shape-1-3.png" alt="shape" className="w-full h-full object-contain blend-screen animate-pulse" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
@@ -982,7 +989,7 @@ export default function Home() {
               </p>
               
               <div className="relative w-44 h-44 mx-auto lg:mx-0 opacity-15 pointer-events-none">
-                <img src="/images/icons/award-shape-1-1.png" alt="wheel" className="w-full h-full object-contain tm-gsap-animate-circle" />
+                <img src="/images/icons/award-shape-1-1.png" alt="wheel" className="w-full h-full object-contain tm-gsap-animate-circle blend-screen" />
               </div>
               
               <div className="flex justify-center lg:justify-start gap-4">
@@ -1169,8 +1176,6 @@ export default function Home() {
                 <div>
                   <div className="relative aspect-video w-full overflow-hidden">
                     <img 
-                      src={proj => blog.img} // Simple fix: use blog.img directly
-                      srcSet=""
                       src={blog.img}
                       alt={blog.title} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 

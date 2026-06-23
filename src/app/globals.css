@@ -208,6 +208,22 @@ body {
   width: 100%;
 }
 
+/* Blend mode utilities for white-background 3D objects/shapes on dark backgrounds */
+/* screen: white pixels become transparent, dark pixels stay visible */
+.blend-screen {
+  mix-blend-mode: screen;
+}
+
+/* multiply: for soft glow/light images on dark bg */
+.blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+/* For images that are white-on-transparent but appear invisible — invert them */
+.img-invert {
+  filter: invert(1);
+}
+
 /* Gencyo Form Input style */
 .minimal-input {
   width: 100%;
