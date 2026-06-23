@@ -42,7 +42,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100 } },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
 };
 
 export default function HomePage() {
@@ -127,7 +127,6 @@ export default function HomePage() {
               variants={itemVariants}
               className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-8 backdrop-blur-sm group hover:border-accent/50 transition-colors duration-300"
             >
-              {/* Hover glow effect */}
               <div className="absolute -inset-px bg-linear-to-b from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
               
               <div className="relative z-10">
@@ -208,7 +207,6 @@ export default function HomePage() {
               variants={itemVariants}
               className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 p-1 flex flex-col h-full"
             >
-              {/* Animated Border Glow */}
               <div className="absolute inset-0 bg-linear-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/20 group-hover:to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-700" />
               
               <div className="relative z-10 bg-background/90 backdrop-blur-xl rounded-[22px] p-8 lg:p-10 flex flex-col h-full border border-white/5 group-hover:bg-background/80 transition-colors duration-300">

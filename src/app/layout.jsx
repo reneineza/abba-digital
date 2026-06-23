@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -18,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: {
     template: "%s | ABBA DIGITAL",
     default: "ABBA DIGITAL — Web Development & Digital Marketing Agency",
@@ -50,11 +49,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-background text-foreground antialiased font-sans selection:bg-blue-500">

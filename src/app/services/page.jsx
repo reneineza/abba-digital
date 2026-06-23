@@ -73,10 +73,10 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100 } },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
 };
 
-function ServiceCard({ service, index }: { service: any; index: number }) {
+function ServiceCard({ service, index }) {
   return (
     <motion.div
       variants={itemVariants}
@@ -101,7 +101,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
         </p>
         
         <div className="flex flex-wrap gap-2">
-          {service.tags.map((tag: string) => (
+          {service.tags.map((tag) => (
             <span
               key={tag}
               className="border border-white/10 bg-white/5 text-muted text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full"
@@ -118,7 +118,6 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
 export default function ServicesPage() {
   return (
     <div className="w-full">
-      {/* ── PAGE HEADER ──────────────────────────────────────────── */}
       <section className="relative pt-32 pb-16 md:pt-44 md:pb-24 px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px] pointer-events-none" />
         
@@ -149,7 +148,6 @@ export default function ServicesPage() {
         </motion.div>
       </section>
 
-      {/* ── ENGINEERING COL ────────────────────────────────────────── */}
       <section className="px-6 lg:px-12 max-w-7xl mx-auto py-16">
         <div className="flex items-center gap-4 mb-12">
           <div className="w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
@@ -174,7 +172,6 @@ export default function ServicesPage() {
         </motion.div>
       </section>
 
-      {/* ── GROWTH COL ────────────────────────────────────────── */}
       <section className="px-6 lg:px-12 max-w-7xl mx-auto py-16">
         <div className="flex items-center gap-4 mb-12">
           <div className="w-2 h-2 bg-purple-500 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
@@ -199,7 +196,6 @@ export default function ServicesPage() {
         </motion.div>
       </section>
 
-      {/* ── BOTTOM CTA ───────────────────────────────────────────── */}
       <section className="border-t border-white/10 px-6 lg:px-12 max-w-7xl mx-auto py-24 md:py-32 flex flex-col md:flex-row md:items-center md:justify-between gap-8 mt-12">
         <div>
           <h2

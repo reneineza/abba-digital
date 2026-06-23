@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
-import { handleContactSubmission, type ActionState } from "@/app/actions/contact";
+import { handleContactSubmission } from "@/app/actions/contact";
 
 // ─── Static data ───────────────────────────────────────────────────────────────
 
@@ -17,7 +17,7 @@ const PROJECT_SCOPES = [
   "Brand & Identity",
   "Data & Analytics",
   "Other",
-] as const;
+];
 
 const BUDGET_OPTIONS = [
   { value: "", label: "Prefer not to say" },
@@ -25,13 +25,13 @@ const BUDGET_OPTIONS = [
   { value: "5k-15k", label: "£5,000 – £15,000" },
   { value: "15k-50k", label: "£15,000 – £50,000" },
   { value: "50k+", label: "£50,000+" },
-] as const;
+];
 
-const INITIAL_STATE: ActionState = { status: "idle" };
+const INITIAL_STATE = { status: "idle" };
 
 // ─── Sub-components ────────────────────────────────────────────────────────────
 
-function FieldError({ message }: { message?: string }) {
+function FieldError({ message }) {
   if (!message) return null;
   return (
     <motion.p
@@ -48,7 +48,7 @@ function FieldError({ message }: { message?: string }) {
 // ─── Main component ────────────────────────────────────────────────────────────
 
 export default function ContactPage() {
-  const [state, formAction, isPending] = useActionState<ActionState, FormData>(
+  const [state, formAction, isPending] = useActionState(
     handleContactSubmission,
     INITIAL_STATE
   );
@@ -59,7 +59,6 @@ export default function ContactPage() {
     <div className="w-full">
       <AnimatePresence mode="wait">
         {state.status === "success" ? (
-          // ── SUCCESS STATE ────────────────────────────────────────────────────
           <motion.section
             key="success"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -68,7 +67,6 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="min-h-[80vh] flex items-center justify-center px-6 relative"
           >
-            {/* Success Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-500/20 rounded-full blur-[150px] pointer-events-none" />
 
             <div className="text-center max-w-lg relative z-10 p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
@@ -108,7 +106,6 @@ export default function ContactPage() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* ── PAGE HEADER ───────────────────────────────────────────────── */}
             <section className="relative pt-32 pb-16 md:pt-44 md:pb-24 px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
               <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[150px] pointer-events-none" />
               
@@ -146,11 +143,9 @@ export default function ContactPage() {
               </div>
             </section>
 
-            {/* ── FORM SECTION ──────────────────────────────────────────────── */}
             <section className="px-6 lg:px-12 max-w-7xl mx-auto py-16 md:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
                 
-                {/* ── The Form ────────────────────────────────────────────── */}
                 <form
                   id="contact-form"
                   action={formAction}
@@ -171,7 +166,6 @@ export default function ContactPage() {
                   )}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {/* Full Name */}
                     <div className="relative group">
                       <label htmlFor="contact-name" className="block text-[10px] tracking-[0.25em] uppercase text-muted font-bold mb-3">
                         Full Name <span className="text-accent">*</span>
@@ -184,7 +178,6 @@ export default function ContactPage() {
                       <FieldError message={fieldErrors.name} />
                     </div>
 
-                    {/* Business Email */}
                     <div className="relative group">
                       <label htmlFor="contact-email" className="block text-[10px] tracking-[0.25em] uppercase text-muted font-bold mb-3">
                         Business Email <span className="text-accent">*</span>
@@ -199,7 +192,6 @@ export default function ContactPage() {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {/* Company */}
                     <div className="relative group">
                       <label htmlFor="contact-company" className="block text-[10px] tracking-[0.25em] uppercase text-muted font-bold mb-3">
                         Company / Brand
@@ -211,7 +203,6 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Budget */}
                     <div className="relative group">
                       <label htmlFor="contact-budget" className="block text-[10px] tracking-[0.25em] uppercase text-muted font-bold mb-3">
                         Approximate Budget
@@ -229,7 +220,6 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Project Scope */}
                   <div className="relative group">
                     <label htmlFor="contact-scope" className="block text-[10px] tracking-[0.25em] uppercase text-muted font-bold mb-3">
                       Project Scope <span className="text-accent">*</span>
@@ -250,7 +240,6 @@ export default function ContactPage() {
                     <FieldError message={fieldErrors.scope} />
                   </div>
 
-                  {/* Project Brief */}
                   <div className="relative group">
                     <label htmlFor="contact-message" className="block text-[10px] tracking-[0.25em] uppercase text-muted font-bold mb-3">
                       Project Brief
@@ -262,7 +251,6 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  {/* Submit */}
                   <div className="pt-6 flex flex-col sm:flex-row sm:items-center gap-6">
                     <button
                       type="submit" disabled={isPending}
@@ -284,7 +272,6 @@ export default function ContactPage() {
                   </div>
                 </form>
 
-                {/* ── Sidebar ─────────────────────────────────────────────── */}
                 <aside className="hidden lg:flex flex-col justify-between lg:col-span-4 border-l border-white/10 pl-16">
                   <div>
                     <h2 className="text-xs tracking-[0.3em] uppercase font-bold text-white mb-10 flex items-center gap-3">
