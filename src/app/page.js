@@ -727,7 +727,7 @@ export default function Home() {
                 </div>
                 
                 <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-light italic">
-                  "{testimonials[activeTestimonial].quote}"
+                  &quot;{testimonials[activeTestimonial].quote}&quot;
                 </p>
 
                 <div className="flex items-center gap-4 pt-4 border-t border-white/5">
@@ -985,7 +985,7 @@ export default function Home() {
                 </h2>
               </div>
               <p className="text-zinc-400 font-light leading-relaxed">
-                We understand that every business is unique. That's why we offer customized solutions to meet your specific needs.
+                We understand that every business is unique. That&apos;s why we offer customized solutions to meet your specific needs.
               </p>
               
               <div className="relative w-44 h-44 mx-auto lg:mx-0 opacity-15 pointer-events-none">
