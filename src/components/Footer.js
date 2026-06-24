@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8">
             <Link href="/" className="group flex items-center gap-3">
               <img 
-                src="/images/logo/white-logo.png" 
+                src="/images/logo/official-logo.png" 
                 alt="ABBA Digital Logo" 
                 className="h-8 object-contain" 
               />

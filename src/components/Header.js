@@ -23,7 +23,7 @@ export default function Header() {
           <div className="shrink-0">
             <Link href="/" className="group flex items-center gap-3">
               <img 
-                src="/images/logo/white-logo2.png" 
+                src="/images/logo/official-logo.png" 
                 alt="ABBA Digital Logo" 
                 className="h-7 object-contain opacity-90 transition-opacity group-hover:opacity-100" 
               />
