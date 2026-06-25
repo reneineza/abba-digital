@@ -9,7 +9,7 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
     };
@@ -29,13 +29,12 @@ export default function CustomCursor() {
 
   // Smooth trail for the outer cursor circle
   useEffect(() => {
-    let animationFrameId;
+    let animationFrameId: number;
 
     const updateTrail = () => {
       setTrail((prev) => {
         const dx = position.x - prev.x;
         const dy = position.y - prev.y;
-        // Ease value: controls follow speed lag
         const ease = 0.15;
         return {
           x: prev.x + dx * ease,

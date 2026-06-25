@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 export default function Services() {
   const pillars = [
@@ -204,15 +205,7 @@ export default function Services() {
                 and scaling engines configured specifically for your workflow.
               </p>
               
-              <Link href="/contact" className="btn-style-one">
-                <span className="btn-arrow-left">
-                  <img src="/images/icons/right-arrow-1-2.png" alt="arrow" className="w-3 h-3" />
-                </span>
-                <span className="btn-title">Initiate Project Planning</span>
-                <span className="btn-arrow-right">
-                  <img src="/images/icons/right-arrow-1-2.png" alt="arrow" className="w-3 h-3" />
-                </span>
-              </Link>
+              <Button href="/contact">Initiate Project Planning</Button>
             </div>
           </div>
         </div>

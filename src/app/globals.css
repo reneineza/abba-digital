@@ -44,7 +44,7 @@ body {
   color: #ffffff;
 }
 
-/* Gencyo animations */
+/* Animations */
 @keyframes floatBobY {
   0% {
     transform: translateY(0px);
@@ -132,7 +132,7 @@ body {
   animation: marqueeRight 25s linear infinite;
 }
 
-/* Gencyo CTA Button Style */
+/* CTA Button Style */
 .btn-style-one {
   position: relative;
   display: inline-flex;
@@ -223,7 +223,7 @@ body {
   filter: invert(1);
 }
 
-/* Gencyo Form Input style */
+/* Form Input style */
 .minimal-input {
   width: 100%;
   padding: 1rem 0;

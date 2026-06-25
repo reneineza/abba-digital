@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +23,11 @@ export default function Header() {
           {/* Logo */}
           <div className="shrink-0">
             <Link href="/" className="group flex items-center gap-3">
-              <img 
+              <Image 
                 src="/images/logo/real-estate-logo.png" 
                 alt="ABBA Digital Logo" 
+                width={0} height={0}
+                sizes="(max-width: 768px) 64px, 80px"
                 className="h-16 md:h-20 object-contain opacity-90 transition-opacity group-hover:opacity-100 brightness-0 invert" 
               />
             </Link>

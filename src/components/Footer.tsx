@@ -1,26 +1,29 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer-section relative bg-[#0D0D0D] border-t border-white/8 overflow-hidden text-white">
-      {/* Gencyo background shapes */}
+      {/* Background shapes */}
       <div className="absolute left-0 bottom-0 w-80 h-80 pointer-events-none opacity-20 tm-gsap-animate-circle">
-        <img src="/images/icons/footer-shape-1-1.png" alt="Footer Shape" className="w-full h-full object-contain blend-screen" />
+        <Image src="/images/icons/footer-shape-1-1.png" alt="Footer Shape" fill className="object-contain blend-screen" sizes="320px" />
       </div>
 
       <div className="relative pt-24 pb-12">
         {/* Footer Top Header */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-16">
           <div className="footer-line mb-8 opacity-25">
-            <img src="/images/icons/footer-line1-1.png" alt="line" className="w-full blend-screen" />
+            <Image src="/images/icons/footer-line1-1.png" alt="line" width={0} height={0} sizes="100vw" className="w-full h-auto blend-screen" style={{ width: '100%', height: 'auto' }} />
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8">
             <Link href="/" className="group flex items-center gap-3">
-              <img 
+              <Image 
                 src="/images/logo/real-estate-logo.png" 
                 alt="ABBA Digital Logo" 
+                width={0} height={0}
+                sizes="(max-width: 768px) 64px, 80px"
                 className="h-16 md:h-20 object-contain brightness-0 invert" 
               />
             </Link>

@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import type { ContactFormData } from "@/types";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     company: "",
@@ -17,16 +19,16 @@ export default function Contact() {
 
   const budgets = ["< $25k", "$25k - $50k", "$50k - $100k", "$100k+"];
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleBudgetSelect = (val) => {
+  const handleBudgetSelect = (val: string) => {
     setFormData((prev) => ({ ...prev, budget: val }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       alert("Name, Email, and Message are required fields.");
@@ -35,7 +37,6 @@ export default function Contact() {
     setLoading(true);
     setSubmitCode(`ABBA-${(Math.random() * 10000).toFixed(0)}`);
 
-    // Simulate database submission
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -103,9 +104,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="font-heading text-xs font-bold text-zinc-500 block mb-2 uppercase tracking-widest">SECURE OFFICE ADDRESS:</span>
-                  <p className="text-zinc-300 leading-relaxed font-bold uppercase tracking-wider text-xs">
-                    1901 Thornridge Circle, Shiloh<br />
-                    Hawaii, USA 81063
+                   <p className="text-zinc-300 leading-relaxed font-bold uppercase tracking-wider text-xs">
+                    Kigali, Rwanda
                   </p>
                 </div>
               </div>
@@ -236,11 +236,11 @@ export default function Contact() {
                       className="btn-style-one cursor-pointer w-full"
                     >
                       <span className="btn-arrow-left">
-                        <img src="/images/icons/right-arrow-1-2.png" alt="arrow" className="w-3 h-3" />
+                        <Image src="/images/icons/right-arrow-1-2.png" alt="arrow" width={12} height={12} className="w-3 h-3" />
                       </span>
                       <span className="btn-title">{loading ? "Registering Technical Scope..." : "Initiate Scope Review"}</span>
                       <span className="btn-arrow-right">
-                        <img src="/images/icons/right-arrow-1-2.png" alt="arrow" className="w-3 h-3" />
+                        <Image src="/images/icons/right-arrow-1-2.png" alt="arrow" width={12} height={12} className="w-3 h-3" />
                       </span>
                     </button>
                   </div>
@@ -257,7 +257,7 @@ export default function Contact() {
         <iframe
           title="ABBA Digital Office Location Map"
           className="map w-full h-[400px] border-none filter grayscale invert opacity-75 contrast-125"
-          src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(ABBA%20Digital)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Kigali,%20Rwanda+(ABBA%20Digital)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         ></iframe>
       </section>
     </div>

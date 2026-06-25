@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 export default function Work() {
   const caseStudies = [
@@ -170,15 +171,7 @@ export default function Work() {
               </p>
             </div>
             
-            <Link href="/contact" className="btn-style-one shrink-0">
-              <span className="btn-arrow-left">
-                <img src="/images/icons/right-arrow-1-2.png" alt="arrow" className="w-3 h-3" />
-              </span>
-              <span className="btn-title">Initiate Project Scope</span>
-              <span className="btn-arrow-right">
-                <img src="/images/icons/right-arrow-1-2.png" alt="arrow" className="w-3 h-3" />
-              </span>
-            </Link>
+            <Button href="/contact" className="shrink-0">Initiate Project Scope</Button>
           </div>
         </div>
       </section>
