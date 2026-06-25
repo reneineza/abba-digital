@@ -19,13 +19,10 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8">
             <Link href="/" className="group flex items-center gap-3">
               <img 
-                src="/images/logo/official-logo.png" 
+                src="/images/logo/real-estate-logo.png" 
                 alt="ABBA Digital Logo" 
-                className="h-8 object-contain" 
+                className="h-16 md:h-20 object-contain brightness-0 invert" 
               />
-              <span className="font-heading text-xl font-extrabold tracking-wider text-white">
-                ABBA <span className="text-[#FF6B1E]">DIGITAL</span>
-              </span>
             </Link>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 font-heading text-lg font-bold">
               <a href="mailto:info@abbadigital.com" className="hover:text-[#FF6B1E] transition-colors">
