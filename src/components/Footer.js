@@ -128,7 +128,7 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-20 pt-8 border-t border-white/5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-zinc-500 font-bold uppercase tracking-wider">
-              &copy; {currentYear} ABBA Digital. All rights reserved. Clone of Gencyo.
+              &copy; {currentYear} ABBA Digital. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6">
               {["Twitter", "Facebook", "Pinterest", "Instagram"].map((social) => (
